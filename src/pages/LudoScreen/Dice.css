@@ -1,0 +1,108 @@
+.dice-container{  
+    width: 16vmin;
+    aspect-ratio: 1;
+    cursor: pointer;
+    margin: 4%;
+  }
+  
+  .dice{
+    position: relative;
+    width: 16vmin;
+    aspect-ratio: 1;
+    border-radius: 1vmin;
+    transform-style: preserve-3d; 
+    transform-origin: 50% 50% 8vmin;
+    transition: transform 2s ease-in-out;
+  }
+  
+  .face{
+    position: absolute;
+    background: radial-gradient(circle at center, rgb(166, 9, 9),rgb(227, 53, 53));
+    width: 16vmin;
+    aspect-ratio: 1;
+    border-radius: 1vmin; 
+    transform: rotateX(0deg) rotateY(180deg);
+    transform-origin: 50% 50% 8vmin;
+    /*backface-visibility: hidden;*/
+  }
+  
+  .face:nth-child(1){
+    transform: rotateY(0deg);
+  }
+  
+  .face:nth-child(2){
+    transform: rotateY(90deg);
+  }
+  
+  .face:nth-child(3){
+    transform: rotateY(180deg);
+  }
+  
+  .face:nth-child(4){
+    transform: rotateY(270deg);
+  }
+  
+  .face:nth-child(5){
+    transform: rotateX(90deg);
+  }
+  
+  .face:nth-child(6){
+    transform: rotateX(270deg);
+  }
+
+  .face-q{
+    position: absolute;
+    background: radial-gradient(circle at center, rgb(166, 9, 9),rgb(227, 53, 53));
+    width: 16vmin;
+    aspect-ratio: 1;
+    border-radius: 1vmin; 
+    transform-origin: 50% 50% 8vmin;
+  }
+  
+  .point-q{
+    position: absolute;
+    width: 4vmin;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    align-self: center;
+    justify-self: center;
+    color:rgb(255, 255, 255);
+    font-size: 5vmin;
+    top: 4vmin;
+    left: 6vmin;
+  }
+
+  .point{
+    position: absolute;
+    width: 2vmin;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    align-self: center;
+    justify-self: center;
+    background:rgb(255, 255, 255);
+    box-shadow:inset 5px 0 10px rgb(201, 199, 199);
+  }
+
+  .point-middle{
+    top: 7vmin;
+  }
+  
+  .point-center{
+    left: 7vmin;
+  }
+  
+  .point-top{
+    top: 2.5vmin;
+  }
+  
+  .point-bottom{
+    bottom: 2.5vmin;
+  }
+  
+  .point-left{
+    left: 2.5vmin;
+  }
+  
+  .point-right{
+    right: 2.5vmin;
+  }

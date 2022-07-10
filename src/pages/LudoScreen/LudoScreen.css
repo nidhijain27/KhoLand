@@ -1,0 +1,585 @@
+/* change this to vw and make it scale better */
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+    background-color: #FFFFFF;
+    /* background-image: url("../bg.jpg"); */
+    /* background-size: cover; */
+}
+
+.playerName,
+.waitingForPlayers {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20%;
+    font-size: 20px;
+    animation: bounceInDown 1s ease-in-out;
+}
+
+.waitingForPlayers {
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.playerName input {
+    outline: none;
+    height: 40px;
+    box-sizing: border-box;
+    width: 250px;
+    background-color: #ecf0f1;
+    border: 2px #3498db solid;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+#Canvas {
+    margin: 0 auto; 
+    flex-wrap: wrap;
+    display: flex;
+    width: 100vw;
+    height: 100vw;
+    padding: 10px;
+    max-width: 500px;
+    max-height: 500px;
+}
+
+h4{
+    font-size: 30px;
+    margin: 30px;
+}
+
+.menu{
+    animation: bounceIn 1s ease-in-out;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-weight: lighter;
+    background-color: #FFFC00;
+}
+
+.menu button{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.03);
+    font-size: 18px;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    outline: none;
+    padding: 16px 24px;
+    display: inline;
+    margin: 8px 4px;
+    border-radius: 12px;
+    transition: all 0.4s ease-in-out;
+    color: #0c2461;
+}
+
+.menu button:hover,
+.menu button:hover {
+    color: #ecf0f1;
+    background-color: #0c2461;
+}
+
+#Canvas .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 40%;
+    height: 40%;
+}
+
+#Canvas .path {
+    box-sizing: border-box;
+    width: 20%;
+    height: 40%;
+}
+
+#Canvas .path.horizontal {
+    width: 40% !important;
+    height: 20% !important;
+}
+
+#Canvas .innerHome {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 20%;
+    width: 20%;
+    background-color: #ecf0f1;
+}
+
+.innerHome div {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+    height: 20%;
+    margin: 0 auto;
+}
+
+.innerHome .mid {
+    display: flex;
+    flex-direction: row;
+    height: 60%;
+    width: 100%;
+}
+
+.innerHome .mid div {
+    height: 100%;
+    width: 20%;
+    flex-direction: column;
+
+}
+
+.innerHome .mid div:nth-child(2) {
+    width: 60%;
+}
+
+#Canvas .home {
+    border: 0.1px black solid;
+    position: relative;
+    box-sizing: border-box;
+    padding: 16%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+#Canvas .red {
+    background-color: #FF0000 !important;  
+}
+
+#Canvas .green {
+    background-color: #0b893e !important;
+}
+
+#Canvas .blue {
+    background-color: #0000FF !important; 
+}
+
+#Canvas .yellow {
+    background-color: #f3d008 !important; 
+}
+
+#Canvas .red.home{
+    border-top-left-radius: 5px;
+}
+
+#Canvas .green.home{
+    border-top-right-radius: 5px;
+}
+
+#Canvas .yellow.home{
+    border-bottom-right-radius: 5px;
+}
+
+#Canvas .blue.home{
+    border-bottom-left-radius: 5px;
+}
+
+#Canvas .finalPath {
+    background-color: #484447 !important;
+}
+
+
+#Canvas .home .inner_space {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    height: 40%;
+    width: 40%;
+    border-radius: 50%;
+    margin: 5%;
+    /* margin-right: 5px;
+    margin-left: 5px; */
+    background-color: #ecf0f1
+}
+
+#Canvas .path {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+#Canvas .path article {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+#Canvas .path.vertical article {
+    width: 100%;
+    height: 16.66666666%;
+    flex-direction: row;
+}
+
+#Canvas .path.horizontal article {
+    height: 100%;
+    width: 16.66666666%;
+}
+
+#Canvas .path div {
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-around;
+    border: 0.1px solid black;
+    background-color: #ecf0f1;
+    box-sizing: border-box;
+}
+
+#Canvas .path.horizontal div {
+    height: 33.3333333%;
+    width: 100%;
+}
+
+#Canvas .path.vertical div {
+    width: 33.3333333%;
+    height: 100%;
+}
+
+.profilePic {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 20%;
+    width: 20%;
+    border-radius: 100%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: 2;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+}
+
+.name {
+    font-weight: bold;
+    position: absolute;
+    color: white;
+    bottom: -5px;
+    font-size: 12px;
+}
+
+.text {
+    font-weight: bold;
+    color: white
+}
+
+
+.box_green .profilePic,
+.box_yellow .profilePic {
+    left: auto;
+    right: 2px;
+}
+
+
+.box_blue .profilePic,
+.box_yellow .profilePic {
+    top: auto;
+    bottom: 2px;
+}
+
+.box_red .name,
+.box_blue .name {
+    top: auto;
+    top: 0%;
+}
+
+.message p,
+.message img {
+    color: #ecf0f1;
+    padding: 4px;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 0;
+    background-color: black;
+    border-radius: 4px;
+    border: 1.5px black solid;
+    left: 20%;
+    top: -50px;
+    z-index: 1;
+    transition: all 0.4s ease-in-out;
+    font-size: 16px;
+    animation: bounceInRight 0.5s;
+}
+
+
+.message p:before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: auto;
+    right: -12px;
+    top: -1px;
+    bottom: auto;
+    border: 10px solid;
+    border-color: black transparent transparent transparent;
+}
+
+
+.message img {
+    background-color: transparent;
+    border: none;
+    height: 60px;
+}
+
+
+#Canvas .box_green .message p,
+#Canvas .box_green .message img,
+#Canvas .box_yellow .message img,
+#Canvas .box_yellow .message p {
+
+    left: auto;
+    right: 25%;
+}
+
+#Canvas .box_red .message p,
+#Canvas .box_red .message img,
+#Canvas .box_green .message img,
+#Canvas .box_green .message p {
+    animation: bounceInLeft 0.5s;
+    left: 25%;
+}
+
+
+
+#Canvas .box_blue .message p,
+#Canvas .box_blue .message img,
+#Canvas .box_yellow .message img,
+#Canvas .box_yellow .message p {
+    bottom: -50px;
+    top: auto;
+}
+
+#Canvas .box_red .message p:before,
+#Canvas .box_green .message p:before {
+    right: auto;
+    left: -12px;
+    top: auto;
+    bottom: -2px;
+    border-color: transparent transparent black transparent;
+}
+
+#Canvas .message div {
+    cursor: pointer;
+    position: relative;
+    box-sizing: border-box;
+    width: 50px;
+    transition: all 0.2s ease-out;
+    transform-origin: center;
+}
+
+
+
+.timer {
+    z-index: 4;
+    position: relative;
+}
+
+.timer::after {
+    z-index: 4;
+    content: "";
+    position: absolute;
+    top: 84%;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    background-color: red;
+    animation: fillWidth 5s ease-in-out;
+}
+
+
+#Canvas .path div p {
+    display: none;
+}
+
+.tada {
+    animation: tada 1s ease-in-out infinite;
+}
+
+
+.Gotti {
+    z-index: 10;
+    margin: auto !important;
+    height: 78% !important;
+    width: auto !important;
+    cursor: pointer;
+    animation: bounceIn 0.8s ease-in-out;
+}
+
+
+.useMe {
+    animation: shake 1s ease-in-out infinite;
+}
+
+.roll {
+    position: relative;
+    font-size: 20px;
+    color: #ecf0f1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.star {
+    margin: auto !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    height: 82% !important;
+    width: 82% !important;
+}
+
+.highLight {
+    overflow: hidden;
+    /* border: 3px black solid; */
+    animation: heartBeat 1s ease-in-out infinite;
+}
+
+.highLight::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-image: linear-gradient(120deg, #eaee44, #33d0ff);
+    /* opacity: .4; */
+    transform: scale(1.3);
+}
+
+
+.twoGotti .Gotti {
+    height: 65% !important;
+}
+
+.multipleGotti .Gotti {
+    height: 50% !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+
+
+.colorWheel {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 50px solid #2ecc71;
+    border-left: 50px solid #e74c3c;
+    border-right: 50px solid #eabd43;
+    border-bottom: 50px solid #3498db;
+}
+
+.control-wrapper{
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+}
+
+.properties-wrapper{
+    padding: 10px;
+}
+
+.properties {
+    position: relative;
+    text-align: center;
+    animation: bounceIn 1s ease-in-out;
+    padding: 10px;
+    background-color:rgba(246, 246, 206, 0.7);
+    margin-top: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+}
+
+.properties .messages {
+    z-index: 4;
+    text-align: center;
+    width: 100%;
+    border-radius: 8px;
+}
+.properties .roll {
+    text-align: center;
+    border-radius: 8px;
+    width: 120px;
+    height: 120px;
+}
+
+.gif {
+    margin: auto auto;
+    z-index: 100;
+    cursor: pointer;
+    width: 100%;
+}
+
+.trofy {
+    width: 100px;
+}
+
+.messages div {
+    width: 100%;
+    height: 50%;
+}
+
+.emojis img {
+    cursor: pointer;
+    margin: 2px;
+    width: 33px;
+    height: 33px;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background: transparent;
+}
+
+.heartBeat {
+    animation: heartBeat 1.2s ease-in-out infinite;
+}
+
+.hidden_gifs img {
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+}
+
+#playerIndicator{
+    display: block;
+    margin: 0px;
+    width: 16vmin;
+}
+
+#playerTimer{
+    display: block;
+    width: 16vmin;
+    margin: 5px;
+    font-size: 2.2rem;
+}
